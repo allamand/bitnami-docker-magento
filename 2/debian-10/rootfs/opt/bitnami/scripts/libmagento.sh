@@ -186,7 +186,7 @@ magento_initialize() {
             local es_auth="0"
             is_boolean_yes "$MAGENTO_ELASTICSEARCH_ENABLE_AUTH" && es_auth="1"
             # Elasticsearch configuration is stored in the database, so we only need to specify for 'setup:install'
-            if is_boolean_yes "$MAGENTO_ELASTICSEARCH_USES_HTTPS"; then
+            if is_boolean_yes "$MAGENTO_ELASTICSEARCH_USE_HTTPS"; then
                 magento_install_cli_flags+=(
                     "--elasticsearch-host" "https://$es_host"
                 )
